@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <title>User Management</title>
+</head>
+<body>
+    <%- include('__menu') %>
+    <div id="container">
+        <div class="path"><label><a class="path" href="/">Home</a> / New User</label></div>
+        
+        <div id="user-form">   
+            <form action="/users/edit/" method="POST">
+                <div class="form-field"><label>ID</label><br /><input class="user-form-input" value="<%= user.id %>" name="_id" type="text" /></div>
+                <div class="form-field"><label>NAME</label><br /><input class="user-form-input" value="<%= user.name %>" name="name" type="text" /></div>
+            
+                <div style="clear: both;"></div>
+            
+                <div class="form-field"><label>ROLE</label><br /><input class="user-form-input" value="<%= user.role %>" name="role" type="text" /></div>
+                <div class="form-field"><label>SURRNAME</label><br /><input class="user-form-input" value="<%= user.surrname %>" name="surrname" type="text" /></div>
+            
+                <div style="clear: both;"></div>
+            
+                <div class="form-field"><label>EMAIL</label><br /><input class="user-form-input" value="<%= user.email %>" name="email" type="text" /></div>
+                <div class="form-field"><label>PHONE</label><br /><input class="user-form-input" value="<%= user.phone %>" name="phone" type="text" /></div>
+            
+                <div style="clear: both;"></div>
+
+                <button class="btn-menu" id="btn-submit">Submit</button>
+            
+            </form>
+              
+        </div>
+    </div>
+    
+</body>
+</html>
