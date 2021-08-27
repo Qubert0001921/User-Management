@@ -24,7 +24,7 @@ div.path {
     color: gray;
 }
 
-a.path {
+a.link {
     color: rgb(0, 144, 228);
     text-decoration: underline;
 }
@@ -140,17 +140,27 @@ div.menu-option:hover { background-color: rgb(70, 70, 70); }
 
 div.btn:hover { background-color: rgb(235, 235, 235); }
 
-div.btn-search {
+button.btn-search {
     background-color: rgb(61, 128, 253);
     border: 1px solid rgb(35, 93, 201);
+    width: 70px;
+    text-align: center;
+    padding: 3px;
+    border-radius: 2px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    float: left;
+    margin-left: 5px;
 }
 
-div.btn-search:hover {
+button.btn-search:hover {
     background-color: rgb(69, 122, 219);
+    cursor:pointer;
 }
 
 input#searcher {
     height: 22px;
+    float: left;
 }
 
 #btn-submit {

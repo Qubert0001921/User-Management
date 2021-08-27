@@ -48,6 +48,11 @@ class User {
         email="${this.email}", role="${this.role}", phone="${this.phone}" WHERE id=${id}`;
         return db.execute(sql);
     }
+
+    static search(search) {
+        const sql = `SELECT * FROM users WHERE firstName='${search}' OR lastName='${search}' OR surrname='${search}' OR email='${search}'`;
+        return db.execute(sql);
+    }
 }
 
 module.exports = User;

@@ -17,15 +17,18 @@ app.use(express.static(__dirname + '/public'));
 app.use('/users', users_router);
 
 app.get('/', async (req, res) => {
+    const { search } = req.query;
     let users;
-    let number = 0;
     try {
-        [users, _] = await User.findAll();
+        if(search === undefined || search == '') 
+            [users, _] = await User.findAll();
+        else 
+            [users, _] = await User.search(search);
     } catch (err) {
         res.send(`<b>Error: </b>database connection failed :(`);
     }
-    
-    res.render('users/index', { users: users, number: number });
+
+    res.render('users/index', { users: users, number: 0 });
 });
 
 app.use((req, res) => { res.status(404).render('404'); });

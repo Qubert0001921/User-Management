@@ -14,8 +14,12 @@
     <%- include('__menu') %>
     <div id="container">
         <div id="search" style="float: right;">
-            <input type="text" id="searcher"/>
-            <a href="#" style="color: white;"><div class="btn btn-search" style="float: right;">Search</div></a>
+            <div style="clear: both;"></div>
+            <form action="/" method="GET">
+                <a href="/" class="link" style="float: left; margin: 5px;">refresh</a>
+                <input name="search" type="text" id="searcher"/>
+                <button class="btn-search" style="color: white;">Search</button>
+            </form>
         </div>
         <div style="clear: both;"></div>
         <table>

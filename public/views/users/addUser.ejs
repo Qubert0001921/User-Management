@@ -14,7 +14,7 @@
 <body>
     <%- include('__menu') %>
     <div id="container">
-        <div class="path"><label><a class="path" href="/">Home</a> / New User</label></div>
+        <div class="path"><label><a class="link" href="/">Home</a> / New User</label></div>
         
         <div id="user-form">   
             <form id="form" action="/users/new" method="POST">
@@ -48,7 +48,7 @@
                 
             </form>
             <div style="text-align: center;">
-                <button class="btn-menu" id="btn-submit">Submit</button>
+                <button onclick="CheckValidationAndSendForm()" class="btn-menu" id="btn-submit">Submit</button>
                 <p id="validation-text" class="validation"></p>
             </div>
 
