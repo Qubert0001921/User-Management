@@ -4,7 +4,7 @@
 Node.js, MySQL, npm
 
 ## How to run application?
-First you have to install or project packages by typing ```npm install``` in the console. Second you have to type ```npm run start``` to run a server. Next you have to run and configure MySQL server. Just go to XAMPP and launch apache and MySQL. Create a database ```usermanagement``` and create a table ```users```.
+First you have to install all project packages by typing ```npm install``` in the console. Second you have to type ```npm run start``` to run a server. Next you have to run and configure MySQL server. Just go to XAMPP and launch apache and MySQL. Create a database ```usermanagement``` and create a table ```users```.
 
 <table>
   <th>id</th>
