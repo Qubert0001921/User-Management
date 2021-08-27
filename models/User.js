@@ -1,8 +1,9 @@
 const db = require('../database');
 
 class User {
-    constructor(name, surrname, email, role, phone) {
-        this.name = name;
+    constructor(firstName, lastName, surrname, email, role, phone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.surrname = surrname;
         this.email = email;
         this.role = role;
@@ -16,9 +17,9 @@ class User {
         const sql = `
         
             INSERT INTO users(
-                id, name, surrname, email, role, phone, createdAt
+                id, firstName, lastName, surrname, email, role, phone, createdAt
             ) VALUES(
-                NULL, '${this.name}', '${this.surrname}', '${this.email}', '${this.role}', '${this.phone}', '${createdAtDate}'
+                NULL, '${this.firstName}', '${this.lastName}', '${this.surrname}', '${this.email}', '${this.role}', '${this.phone}', '${createdAtDate}'
             );
         
         `;
@@ -38,6 +39,13 @@ class User {
 
     static deleteById(id) {
         const sql = `DELETE FROM users WHERE id=${id}`;
+        return db.execute(sql);
+    }
+
+    updateById(id) {
+        const sql = `UPDATE users SET 
+        firstName="${this.firstName}", lastName="${this.lastName}", surrname="${this.surrname}", 
+        email="${this.email}", role="${this.role}", phone="${this.phone}" WHERE id=${id}`;
         return db.execute(sql);
     }
 }

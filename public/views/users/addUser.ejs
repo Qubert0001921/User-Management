@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <title>User Management</title>
+    <script src="/js/script.js"></script>
 </head>
 <body>
     <%- include('__menu') %>
@@ -16,25 +17,41 @@
         <div class="path"><label><a class="path" href="/">Home</a> / New User</label></div>
         
         <div id="user-form">   
-            <form action="/users/edit/" method="POST">
-                <div class="form-field"><label>ID</label><br /><input class="user-form-input" value="<%= user.id %>" name="_id" type="text" /></div>
-                <div class="form-field"><label>NAME</label><br /><input class="user-form-input" value="<%= user.name %>" name="name" type="text" /></div>
+            <form id="form" action="/users/new" method="POST">
+                <div class="form-field"><label>FIRST NAME</label><br /><input id="firstName-input" required autocomplete="off" class="user-form-input" name="firstName" type="text" />
+                </div>
+                
+                <div class="form-field"><label>LAST NAME</label><br /><input id="lastName-input" required autocomplete="off" class="user-form-input" name="lastName" type="text" />
+                </div>
             
                 <div style="clear: both;"></div>
             
-                <div class="form-field"><label>ROLE</label><br /><input class="user-form-input" value="<%= user.role %>" name="role" type="text" /></div>
-                <div class="form-field"><label>SURRNAME</label><br /><input class="user-form-input" value="<%= user.surrname %>" name="surrname" type="text" /></div>
+                <div class="form-field"><label>ROLE</label><br />
+                    <select name="role" class="user-form-select">
+                        <option value="user">user</option>
+                        <option value="admin">admin</option>
+                    </select>
+                </div>
+                <div class="form-field"><label>SURRNAME</label><br /><input id="surrname-input" required autocomplete="off" class="user-form-input" name="surrname" type="text" />
+                </div>
             
                 <div style="clear: both;"></div>
             
-                <div class="form-field"><label>EMAIL</label><br /><input class="user-form-input" value="<%= user.email %>" name="email" type="text" /></div>
-                <div class="form-field"><label>PHONE</label><br /><input class="user-form-input" value="<%= user.phone %>" name="phone" type="text" /></div>
-            
-                <div style="clear: both;"></div>
+                <div class="form-field"><label>EMAIL</label><br /><input id="email-input" required autocomplete="off" class="user-form-input" name="email" type="text" />
+                </div>
 
-                <button class="btn-menu" id="btn-submit">Submit</button>
+                <div class="form-field"><label>PHONE</label><br /><input id="phone-input" required autocomplete="off" class="user-form-input" name="phone" onkeydown="PhoneNumberFormatter()" />
+                    
+                </div>
             
+                <div style="clear: both;"></div>
+                
             </form>
+            <div style="text-align: center;">
+                <button class="btn-menu" id="btn-submit">Submit</button>
+                <p id="validation-text" class="validation"></p>
+            </div>
+
               
         </div>
     </div>

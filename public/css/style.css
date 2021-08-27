@@ -40,12 +40,25 @@ button.btn-menu {
     font-size: 16px;
 }
 
+p.validation {
+    color: red;
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
 .btn-menu:hover { background-color: rgb(235, 235, 235); cursor: pointer; }
 
 .user-form-input {
     width: 480px;
     font-size: 18px;
     height: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.user-form-select {
+    width: 488px;
+    font-size: 18px;
+    height: 36px;
     font-family: 'Source Sans Pro', sans-serif;
 }
 

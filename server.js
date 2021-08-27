@@ -12,18 +12,20 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/public/views'));
+app.set('js', path.join(__dirname, '/public/js'));
 app.use(express.static(__dirname + '/public'));
 app.use('/users', users_router);
 
 app.get('/', async (req, res) => {
-    let users
+    let users;
+    let number = 0;
     try {
         [users, _] = await User.findAll();
     } catch (err) {
-        console.log(err);
+        res.send(`<b>Error: </b>database connection failed :(`);
     }
-
-    res.render('users/index', { users: users });
+    
+    res.render('users/index', { users: users, number: number });
 });
 
 app.use((req, res) => { res.status(404).render('404'); });
