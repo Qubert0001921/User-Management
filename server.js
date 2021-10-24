@@ -28,7 +28,7 @@ app.get('/', async (req, res) => {
         res.send(`<b>Error: </b>database connection failed :(`);
     }
 
-    res.render('users/index', { users: users, number: 0 });
+    res.render('users/shared/__layout', { users: users, number: 0, page: 'index' });
 });
 
 app.use((req, res) => { res.status(404).render('404'); });

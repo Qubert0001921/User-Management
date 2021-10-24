@@ -6,7 +6,7 @@ router.get('/edit/:id', async (req, res) => {
     const id = req.params.id;
     const [user, _] = await User.findById(id);
 
-    res.render('users/editUser', { user: user[0] });
+    res.render('users/shared/__layout', { user: user[0], page: 'editUser' });
 });
 
 router.get('/delete/:id', async (req, res) => {
@@ -16,7 +16,7 @@ router.get('/delete/:id', async (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-    res.render('users/addUser');
+    res.render('users/shared/__layout', { page: 'addUser' });
 });
 
 router.post('/new', async (req, res) => {
