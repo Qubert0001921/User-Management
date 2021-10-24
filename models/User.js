@@ -50,7 +50,11 @@ class User {
     }
 
     static search(search) {
-        const sql = `SELECT * FROM users WHERE firstName='${search}' OR lastName='${search}' OR surrname='${search}' OR email='${search}'`;
+        const sql = `SELECT * FROM users WHERE 
+            firstName='${search}' OR lastName='${search}' 
+            OR surrname='${search}' OR email='${search}'
+            OR role='${search}' OR phone='${search}'`;
+
         return db.execute(sql);
     }
 }
